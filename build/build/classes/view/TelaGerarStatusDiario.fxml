@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="ancPanPainelGerarStatusDiario" fx:id="ancPanPainelGerarStatusDiario" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="647.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaGerarStatusDiario">
+   <children>
+      <Label layoutX="219.0" layoutY="60.0" prefHeight="27.0" prefWidth="209.0" text="Gerar Recebimento Diario" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker id="dData" fx:id="dData" layoutX="344.0" layoutY="160.0" prefHeight="25.0" prefWidth="148.0" promptText="Data" />
+      <Button id="bGerar" fx:id="bGerar" layoutX="301.0" layoutY="229.0" mnemonicParsing="false" onAction="#eventoBtnGerar" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Gerar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ComboBox id="cCobrador" fx:id="cCobrador" layoutX="169.0" layoutY="160.0" prefHeight="25.0" prefWidth="132.0" promptText="Cobrador" styleClass="cWhite" stylesheets="@../origemTela.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+   </children>
+</AnchorPane>

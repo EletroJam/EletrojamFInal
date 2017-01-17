@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="837.0" prefWidth="568.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaFuncionarioEditar">
+  <children>
+    <GridPane prefHeight="565.0" prefWidth="525.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <children>
+        <Label text="Nome:" GridPane.columnIndex="0">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+        <Label text="Data  de Nascimento:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+        <Label text="CPF:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+        <Label text="Identidade:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+        <TextField fx:id="lNome" prefWidth="200.0" GridPane.columnIndex="1" />
+        <TextField fx:id="lCpf" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField fx:id="lIdentidade" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <TextField fx:id="lEmail" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Cep:" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Estado:" GridPane.rowIndex="6">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Bairro:" GridPane.rowIndex="7">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Cidade:" GridPane.rowIndex="8">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Logadouro" GridPane.rowIndex="9">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Complemento:" GridPane.rowIndex="10">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <TextField fx:id="lCep" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="lEstado" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="lBairro" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="lCidade" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField fx:id="lLogadouro" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField fx:id="lComplemento" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <DatePicker fx:id="lData" prefHeight="25.0" prefWidth="397.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Telefone:" GridPane.rowIndex="11">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Celular:" GridPane.rowIndex="12">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lTelefone" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <TextField fx:id="lCelular" prefHeight="8.0" prefWidth="387.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="80.0" prefWidth="138.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="397.0" minWidth="10.0" prefWidth="387.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <HBox id="HBox" alignment="CENTER" minWidth="-1.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+      <children>
+        <Button mnemonicParsing="false" onAction="#handleOk" prefWidth="80.0" text="OK" />
+      </children>
+    </HBox>
+      <Label layoutX="14.0" layoutY="619.0" text="Cargo:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="cResponsavel" layoutX="185.0" layoutY="619.0" mnemonicParsing="false" text="Responsável">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cCobrador" layoutX="185.0" layoutY="676.0" mnemonicParsing="false" text="Cobrador">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cEntregador" layoutX="351.0" layoutY="619.0" mnemonicParsing="false" text="Entregador">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <Label fx:id="lCadastradoIdentidade" layoutX="401.0" layoutY="751.0" text="Identidade já cadastrado" textFill="#eb0808" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lCadastradoCpf" layoutX="401.0" layoutY="723.0" text="CPF já cadastrado" textFill="#e80a0a" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lCadastradoEmail" layoutX="230.0" layoutY="761.0" text="Email já cadastrado" textFill="#f50909" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lCadastradoCel" layoutX="230.0" layoutY="739.0" text="Celular ja cadastrado" textFill="#f50b0b" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lCadastradoTel" layoutX="230.0" layoutY="721.0" text="Telefone já cadastrado" textFill="#e80505" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lValidoIdentidade" layoutX="15.0" layoutY="759.0" text="Identidade não é valida" textFill="#eb0808" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lValidoCpf" layoutX="15.0" layoutY="739.0" text="CPF nao é valido" textFill="#eb0505" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lValidoEmail" layoutX="15.0" layoutY="719.0" text="Email não é valido" textFill="#f50808" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+  </children>
+</AnchorPane>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="ancPanPainelInicial" fx:id="ancPanPainelInicial" prefHeight="675.0" prefWidth="1245.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaInicial">
+   <children>
+      <Label id="lFuncionarioNome" fx:id="lFuncionarioNome" layoutX="893.0" layoutY="30.0" prefHeight="40.0" prefWidth="425.0" textFill="#ff3737">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <TableView id="tbStatus" fx:id="tbStatus" layoutY="248.0" prefHeight="426.0" prefWidth="1318.0" />
+      <Label layoutX="606.0" layoutY="121.0" text="Status" textAlignment="CENTER" textFill="#0d0d0d">
+         <font>
+            <Font name="Arial Unicode MS" size="29.0" />
+         </font>
+      </Label>
+      <DatePicker id="dtData" fx:id="dtData" layoutX="14.0" layoutY="208.0" promptText="Escolha a Data">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></DatePicker>
+      <Button id="btConsultar" fx:id="btConsultar" layoutX="474.0" layoutY="208.0" mnemonicParsing="false" onAction="#eventoBtnConsultar" prefHeight="25.0" prefWidth="75.0" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Consultar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+         <ComboBox id="ccCobrador" fx:id="ccCobrador" layoutX="204.0" layoutY="208.0" prefHeight="25.0" prefWidth="254.0" promptText="Cobrador" styleClass="cWhite" stylesheets="@../origemTela.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Button id="btFerias" fx:id="btFerias" layoutX="1231.0" layoutY="208.0" mnemonicParsing="false" onAction="#eventoBtnFerias" prefHeight="25.0" prefWidth="75.0" text="Feriado">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <MenuBar id="MMenu" fx:id="MMenu" layoutX="1.0" layoutY="1.0" prefHeight="27.0" prefWidth="1318.0" styleClass="cWhite">
+         <menus>
+            <Menu id="MCadastrar" fx:id="MCadastrar" mnemonicParsing="false" text="CADASTRAR">
+              <items>
+                <MenuItem id="MCliente" fx:id="MCliente" mnemonicParsing="false" onAction="#eventoMCadastrarCliente" text="CLIENTE" />
+                  <MenuItem id="MFuncionario" fx:id="MFuncionario" mnemonicParsing="false" onAction="#eventoMCadastrarFuncionario" text="FUNCIONARIO" />
+                  <MenuItem id="MOperacao" fx:id="MOperacao" mnemonicParsing="false" onAction="#eventoMCadastrarOperacao" text="OPERAÇÃO" />
+              </items>
+            </Menu>
+            <Menu id="MRelatorio" fx:id="MRelatorio" mnemonicParsing="false" text="RELATÓRIO">
+              <items>
+                  <MenuItem id="MReceber" fx:id="MReceber" mnemonicParsing="false" onAction="#eventoMReceber" text="A RECEBER" />
+                  <MenuItem id="MLucroCobrador" fx:id="MLucroCobrador" mnemonicParsing="false" onAction="#eventoMRelatorioCobrancaCobrador" text="ANDAMENTO COBRADOR" />
+                   <MenuItem fx:id="MEmprestimoDiario" mnemonicParsing="false" onAction="#eventoMRelatorioEmprestimoDiario" text="EMPRESTIMO DIARIO" />
+                  <MenuItem fx:id="MVendedor" mnemonicParsing="false" onAction="#eventoMRelatorioVendedor" text="FECHAMENTO GERAL" />
+                  <MenuItem fx:id="MRelatorioResponsavelEspec" mnemonicParsing="false" onAction="#eventoMRelatorioResponsavelEspec" text="FECHAMENTO RESPONSAVEL" />
+                  <MenuItem fx:id="MClienteResponsavel" mnemonicParsing="false" onAction="#eventoMRelatorioClienteResponsavel" text="CLIENTE POR RESPONSAVEL" />
+                  <MenuItem id="MLucroEntregador" fx:id="MLucroEntregador" mnemonicParsing="false" onAction="#eventoMRelatorioCobrancaEntregador" text="COMISSÃO ENTREGADOR" />
+                  <MenuItem fx:id="MRelatorioResponsavelGeralRua" mnemonicParsing="false" onAction="#eventoMRelatorioGeralCobrancaTodos" text="COBRANÇA " />
+                  <MenuItem fx:id="MLucroPercaFutura" mnemonicParsing="false" onAction="#eventoMRelatorioPercaFutura" text="PERCAS FUTURA" />
+                <MenuItem id="MStatus" fx:id="MStatus" mnemonicParsing="false" onAction="#eventoMRelatorioStatus" text="RECEBIMENTO DIARIO" />
+                  <MenuItem fx:id="MGeral" mnemonicParsing="false" onAction="#eventoMRelatorioGeral" text="RECEBIMENTO GERAL" />
+              </items>
+            </Menu>
+            <Menu id="MListar" fx:id="MListar" mnemonicParsing="false" text="LISTAR">
+              <items>
+                <MenuItem id="MHistoricoCliente" mnemonicParsing="false" onAction="#eventoMHistoricoCliente" text="HISTORICO CLIENTE" />
+              </items>
+            </Menu>
+            <Menu id="MGerar" fx:id="MGerar" mnemonicParsing="false" text="GERAR">
+              <items>
+                <MenuItem id="MCobranca" fx:id="MCobranca" mnemonicParsing="false" onAction="#eventoMGerarCobranca" text="COBRANÇA" />
+              </items>
+            </Menu>
+            <Menu id="MEdita" fx:id="MEdita" mnemonicParsing="false" text="EDITA">
+              <items>
+                <MenuItem id="MECliente" fx:id="MECliente" mnemonicParsing="false" onAction="#eventoMClienteEditar" text="CLIENTE" />
+                  <MenuItem id="MEFuncionario" fx:id="MEFuncionario" mnemonicParsing="false" onAction="#eventoFuncionarioEditar" text="FUNCIONARIO" />
+              </items>
+            </Menu>
+         </menus></MenuBar>
+   </children>
+</AnchorPane>

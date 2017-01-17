@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-06-21T20:51:32 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pop" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="be9f9ad4-9c29-4706-87ad-2175fca800e1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="eletro"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select  * from pessoa p, funcionario f where p.id = f.id_funcionario]]>
+	</queryString>
+	<field name="nome" class="java.lang.String"/>
+	<field name="cpf" class="java.lang.String"/>
+	<field name="identidade" class="java.lang.String"/>
+	<field name="id_endereco" class="java.lang.Integer"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="data_nascimento" class="java.sql.Date"/>
+	<field name="foto" class="java.lang.Object"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="login" class="java.lang.String"/>
+	<field name="cargo" class="java.lang.String"/>
+	<field name="senha" class="java.lang.String"/>
+	<field name="cargo2" class="java.lang.String"/>
+	<field name="cargo3" class="java.lang.String"/>
+	<field name="id_funcionario" class="java.lang.Integer"/>
+	<field name="cargo4" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="35" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="0" width="100" height="30" uuid="bcf115ce-370e-4643-841b-bfa0be667925"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="60340a4b-78a1-42b2-b4ff-6625ef2f6acf"/>
+				<text><![CDATA[nome:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="460" y="0" width="100" height="30" uuid="4aa858c0-3bb3-4f78-9af2-bd40b5405f65"/>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="0" width="100" height="30" uuid="8685fe88-cf27-4019-b318-c55e919cea12"/>
+				<text><![CDATA[sexo:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="21" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="postgresql-9.4-1204.jdbc41.jar" sourcepath="postgresql-9.4-1204.jdbc41.jar"/>
+	<classpathentry kind="lib" path="postgresql-9.4-1204.jdbc4.jar"/>
+	<classpathentry kind="lib" path="postgresql-9.4-1204.jdbc42.jar"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="joda-time-2.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="joda-time-2.9.1-no-tzdb.jar"/>
+	<classpathentry kind="lib" path="joda-time-2.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="joda-time-2.9.1.jar"/>
+	<classpathentry kind="lib" path="commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="groovy-all-2.0.1.jar"/>
+	<classpathentry kind="lib" path="iText-2.1.7.js2.jar"/>
+	<classpathentry kind="lib" path="jasperreports-5.6.0.jar"/>
+	<classpathentry kind="lib" path="poi-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="commons-beanutils-1.9.0.jar"/>
+	<classpathentry kind="lib" path="commons-codec-1.5.jar"/>
+	<classpathentry kind="lib" path="commons-javaflow-20060411.jar"/>
+	<classpathentry kind="lib" path="commons-logging-1.1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="policy.jar"/>
+	<classpathentry kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

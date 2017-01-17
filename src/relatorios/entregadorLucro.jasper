@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-05-11T14:14:44 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cobranca" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="3d34950f-5585-45d8-a265-bd44bef4618f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<parameter name="func" class="java.lang.String"/>
+	<parameter name="dataIni" class="java.sql.Date"/>
+	<parameter name="dataFim" class="java.sql.Date"/>
+	<queryString>
+		<![CDATA[select distinct p.nome, Round(sum(o.valor_pedido * o.porcentagem_lucro_entregador /100),2) as total_entregador from pessoa p, funcionario f, operacao o where p.id = f.id_funcionario and
+ o.id_funcionario_entregador = f.id_funcionario and o.data_operacao_realizada BETWEEN $P{dataIni}  and  $P{dataFim} group by p.nome order by p.nome]]>
+	</queryString>
+	<field name="nome" class="java.lang.String"/>
+	<field name="total_entregador" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="0" width="183" height="30" uuid="919f9285-289d-4336-bc2e-1aa4b8600f27"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMISSÃO ENTREGADOR]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="460" y="5" width="100" height="20" uuid="a89fca52-15b7-48b1-80a6-8b6e8214eee5"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Total R$:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="3" width="379" height="21" uuid="f53d198e-5612-45d1-97cf-8c5b652f67b4"/>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="0" width="549" height="1" uuid="4bdda728-7ca1-43e5-94cc-6a175ac099b4"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="380" height="30" uuid="ab46cc42-7a0c-45f5-aec0-f88cffd76ea6"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="0" width="100" height="30" uuid="981e4a76-744e-484e-8406-d9156d6ab6d7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{total_entregador}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="510" y="2" width="40" height="30" uuid="ddce4eaf-eb93-41c8-9b08-ad039d7f7cfe"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

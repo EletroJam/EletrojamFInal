@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-07-31T00:41:09 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cobranca" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="3d34950f-5585-45d8-a265-bd44bef4618f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="dataIni" class="java.sql.Date"/>
+	<parameter name="dataFim" class="java.sql.Date"/>
+	<queryString>
+		<![CDATA[
+   
+   
+   select s.func , sum(s.parcelas * o.valor_cobrador ) as diario, count(s.id_operacao) as cobranca, sum( s.multas * o.valor_cobrador_multa) as multa_diaria, (sum(s.parcelas * o.valor_cobrador)  + sum(s.multas * o.valor_cobrador_multa)) as totalcobrador from status s, operacao o where  o.id = s.id_operacao and s.data_inicial_pagamento BETWEEN $P{dataIni}  and  $P{dataFim}  and check_pag = 'TRUE' GROUP BY s.func]]>
+	</queryString>
+	<field name="func" class="java.lang.String"/>
+	<field name="diario" class="java.math.BigDecimal"/>
+	<field name="cobranca" class="java.lang.Long"/>
+	<field name="multa_diaria" class="java.math.BigDecimal"/>
+	<field name="totalcobrador" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="0" width="183" height="30" uuid="919f9285-289d-4336-bc2e-1aa4b8600f27"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ANDAMENTO COBRADOR]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="149" height="20" uuid="d3798ad6-3117-4161-9bcc-5447c9b83382"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="-1" width="100" height="23" uuid="eb44ab6a-f63b-4110-9c70-e31aa6889f6d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Total Diario R$:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="-1" width="100" height="21" uuid="6d3c878a-6a6a-49aa-b809-d7d9daf656ed"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Total Multa R$:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="20" uuid="a89fca52-15b7-48b1-80a6-8b6e8214eee5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Total R$:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="-1" width="100" height="21" uuid="a12f76e8-bfc9-4e9a-8c5d-e8224d75bce3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[cobranca]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="0" width="549" height="1" uuid="4bdda728-7ca1-43e5-94cc-6a175ac099b4"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="150" height="30" uuid="e3fdd342-685b-493e-ac17-484b61ac5344"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="100" height="30" uuid="0c7d26df-41a3-47ab-a09b-585ce405c074"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{diario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="100" height="30" uuid="429907bf-ab72-46de-b632-35ea1e3f831e"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cobranca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="100" height="30" uuid="7f1a06e7-8ba2-4e7d-aa5d-cbe98500b227"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{multa_diaria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="442bb3ad-1fbe-438d-9eb8-f518d9e2221f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{totalcobrador}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="510" y="2" width="40" height="30" uuid="ddce4eaf-eb93-41c8-9b08-ad039d7f7cfe"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

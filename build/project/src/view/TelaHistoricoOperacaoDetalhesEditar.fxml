@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" styleClass="pane" stylesheets="@../origemTela.css" prefWidth="510.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaHistoricoOperacaoDetalhesEditar">
+   <children>
+      <Button id="btnEditar" fx:id="btnEditar" layoutX="239.0" layoutY="266.0" mnemonicParsing="false" onAction="#eventoBtnEditar"  styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Editar" />
+      <Label layoutX="177.0" layoutY="27.0" text="Editar Data Inicial">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <DatePicker id="lData" fx:id="lData" layoutX="230.0" layoutY="147.0" />
+      <Label layoutX="171.0" layoutY="149.0" text="Data:">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

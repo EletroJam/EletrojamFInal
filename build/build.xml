@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<project name="EletroJamProject" default="do-deploy" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
+	<target name="init-fx-tasks">
+		<path id="fxant">
+			<filelist>
+				<file name="${java.home}\..\lib\ant-javafx.jar"/>
+				<file name="${java.home}\lib\jfxrt.jar"/>
+			</filelist>
+		</path>
+	
+		<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+			uri="javafx:com.sun.javafx.tools.ant"
+			classpathref="fxant"/>
+	</target>
+	<target name="setup-staging-area">
+		<delete dir="externalLibs" />
+		<delete dir="project" />
+		<delete dir="projectRefs" />
+	
+		<mkdir dir="externalLibs" />
+	
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="joda-time-2.9.1-sources.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="commons-javaflow-20060411.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="postgresql-9.4-1204.jdbc41.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="commons-digester-2.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="commons-collections-3.2.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="policy.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="groovy-all-2.0.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="commons-codec-1.5.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="jasperreports-5.6.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="joda-time-2.9.1-no-tzdb.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="iText-2.1.7.js2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="joda-time-2.9.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="joda-time-2.9.1-javadoc.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="commons-logging-1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="poi-3.7-20101029.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="postgresql-9.4-1204.jdbc4.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="commons-logging-1.1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="commons-beanutils-1.9.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<filename name="postgresql-9.4-1204.jdbc42.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Zeke\Desktop\eclipse\plugins">
+				<filename name="org.aspectj.runtime_1.8.6.20150608154244.jar"/>
+			</fileset>
+		</copy>
+	
+		<mkdir dir="project" />
+		<copy todir="project">
+			<fileset dir="C:\Users\Zeke\Desktop\workspace\EletroJamProject">
+				<include name="src/**" />
+			</fileset>
+		</copy>
+	
+		<mkdir dir="projectRefs" />
+	</target>
+	<target name='do-compile'>
+		<delete dir="build" />
+		<mkdir dir="build/src" />
+		<mkdir dir="build/libs" />
+		<mkdir dir="build/classes" />
+	
+		<!-- Copy project-libs references -->
+		<copy todir="build/libs">
+			<fileset dir="externalLibs">
+				<include name="joda-time-2.9.1-javadoc.jar"/>
+				<include name="joda-time-2.9.1-no-tzdb.jar"/>
+				<include name="commons-digester-2.1.jar"/>
+				<include name="postgresql-9.4-1204.jdbc4.jar"/>
+				<include name="commons-collections-3.2.1.jar"/>
+				<include name="org.aspectj.runtime_1.8.6.20150608154244.jar"/>
+				<include name="joda-time-2.9.1-sources.jar"/>
+				<include name="postgresql-9.4-1204.jdbc41.jar"/>
+				<include name="groovy-all-2.0.1.jar"/>
+				<include name="postgresql-9.4-1204.jdbc42.jar"/>
+				<include name="commons-beanutils-1.9.0.jar"/>
+				<include name="commons-javaflow-20060411.jar"/>
+				<include name="iText-2.1.7.js2.jar"/>
+				<include name="policy.jar"/>
+				<include name="commons-codec-1.5.jar"/>
+				<include name="jasperreports-5.6.0.jar"/>
+				<include name="poi-3.7-20101029.jar"/>
+				<include name="commons-logging-1.1.1.jar"/>
+				<include name="joda-time-2.9.1.jar"/>
+				<include name="commons-logging-1.1.jar"/>
+			</fileset>
+		</copy>
+	
+		<!-- Copy project references -->
+	
+		<!-- Copy project sources itself -->
+		<copy todir="build/src">
+			<fileset dir="project/src">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+	
+		<javac includeantruntime="false" source="1.8" target="1.8" srcdir="build/src" destdir="build/classes" encoding="Cp1252">
+			<classpath>
+				<fileset dir="build/libs">
+					<include name="*"/>
+				</fileset>
+			</classpath>
+		</javac>
+	
+		<!-- Copy over none Java-Files -->
+		<copy todir="build/classes">
+		<fileset dir="project/src">
+			<exclude name="**/*.java"/>
+		</fileset>
+		</copy>
+	
+	
+	</target>
+	<target name="do-deploy" depends="setup-staging-area, do-compile, init-fx-tasks">
+		<delete file="dist"/>
+		<delete file="deploy" />
+	
+		<mkdir dir="dist" />
+		<mkdir dir="dist/libs" />
+	
+		<copy todir="dist/libs">
+			<fileset dir="externalLibs">
+				<include name="*" />
+			</fileset>
+		</copy>
+	
+	
+			<mkdir dir="dist/resources" />
+								<copy todir="dist/resources" >
+								    <fileset dir="../resources" />
+								</copy>
+
+								<mkdir dir="package" />
+								
+								    	<mkdir dir="package/windows" />
+								    	<copy todir="package/windows">
+								    	    <fileset dir="..">
+								    	        <include name="AddressApp.ico" />
+								    	        <include name="AddressApp-setup-icon.bmp" />
+								    	    </fileset>
+								    	</copy>
+								
+					<fx:resources id="appRes">
+							<fx:fileset dir="dist" includes="EletroJamProject.jar"/>
+							<fx:fileset dir="dist" includes="libs/*"/>
+							<fx:fileset dir="dist" includes="resources/**"/>
+					</fx:resources> 
+			
+				<fx:application id="fxApplication"
+					name="EletroJan"
+					mainClass="aplicacao.ExecutarEletroJamSistema"
+				/>
+	
+		<fx:application id="fxApplication"
+			name="JK"
+			mainClass="aplicacao.ExecutarEletroJamSistema"
+		/>
+	
+		<mkdir dir="build/classes/META-INF" />
+	
+	
+	
+		<fx:jar destfile="dist/EletroJamProject.jar">
+			<fx:application refid="fxApplication"/>
+			<fileset dir="build/classes">
+			</fileset>
+			<fx:resources refid="appRes"/>
+	
+			<manifest>
+				<attribute name="Implementation-Vendor" value="Ezequiel"/>
+				<attribute name="Implementation-Title" value="JK"/>
+				<attribute name="Implementation-Version" value="0.5"/>
+				<attribute name="JavaFX-Feature-Proxy" value="None"/>
+			</manifest>
+		</fx:jar>
+	
+	
+		<mkdir dir="deploy" />
+		<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
+		<fx:deploy
+			embedJNLP="false"
+			extension="false"
+			includeDT="false"
+			offlineAllowed="true"
+			outdir="${basedir}/deploy"
+			outfile="EletroJamProject" nativeBundles="exe"
+			updatemode="background" >
+	
+			<fx:platform basedir="${java.home}"/>
+			<fx:info title="EletroJamProject" vendor="Ezequiel"/>
+	
+			<fx:application refId="fxApplication"/>
+			<fx:resources refid="appRes"/>
+		</fx:deploy>
+	
+	
+	</target>
+</project>

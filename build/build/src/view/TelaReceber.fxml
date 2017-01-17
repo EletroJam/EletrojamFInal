@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="652.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaReceber">
+   <children>
+      <TableView id="personTable" fx:id="cobradorTable" layoutX="4.0" layoutY="102.0" prefHeight="383.0" prefWidth="645.0">
+         <columns>
+            <TableColumn id="nomeColum" fx:id="nomeColum" prefWidth="357.0" text="Nome" />
+            <TableColumn id="dataColum" fx:id="dataColum" prefWidth="131.0" text="Data Pagamento" />
+            <TableColumn id="receberColum" fx:id="receberColum" prefWidth="155.0" text="A Receber" />
+         </columns>
+      </TableView>
+      <Button id="btnRelatorio" fx:id="btnRelatorio" layoutX="115.0" layoutY="47.0" mnemonicParsing="false" onAction="#eventoBtnRelatorio" prefHeight="25.0" prefWidth="67.0" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Relatorio">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="343.0" layoutY="27.0" prefHeight="41.0" prefWidth="126.0" text="Total a Receber R$:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="receberVal" fx:id="receberVal" layoutX="469.0" layoutY="38.0" prefHeight="20.0" prefWidth="126.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button id="btnPesquisa" fx:id="btnPesquisa" layoutX="34.0" layoutY="47.0" mnemonicParsing="false" onAction="#eventoBtnPesquisa" prefHeight="25.0" prefWidth="67.0" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Pesquisa">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

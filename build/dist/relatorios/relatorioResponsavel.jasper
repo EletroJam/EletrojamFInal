@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-07-31T00:33:01 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioResponsavel" pageWidth="1224" pageHeight="792" orientation="Landscape" columnWidth="1184" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9b7752b3-95e8-4945-a79e-da338cd53595">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="eletro"/>
+	<parameter name="idResp" class="java.lang.Integer"/>
+	<parameter name="totalEntregador" class="java.lang.String"/>
+	<parameter name="parcelas" class="java.lang.Integer"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="valorEmprestado" class="java.lang.String"/>
+	<parameter name="valorCobrador" class="java.lang.String"/>
+	<parameter name="valorPassando" class="java.lang.String"/>
+	<parameter name="nomeResp" class="java.lang.String"/>
+	<parameter name="fim" class="java.sql.Date"/>
+	<parameter name="ini" class="java.sql.Date"/>
+	<parameter name="comissao" class="java.lang.String"/>
+	<parameter name="nome" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select o.data_operacao_realizada, o.valor_pedido ,  (o.parcelas * o.valor_diario ) as receber , c.apelido, o.parcelas, o.lucro_mes_funcionario, (o.porfora * o.parcelas) as porfora,
+(parcelas * o.valor_cobrador) as diario, 
+ parcelas * o.valor_cobrador + o.porfora * o.parcelas  +  o.lucro_mes_funcionario as total, 
+o.id_funcionario_entregador, (o.porcentagem_lucro_entregador * o.valor_pedido /100 ) as entregador from operacao o, realiza r, cliente c where o.id = r.id_operacao and r.id_cliente = c.id_cliente and o.id_funcionario_venda =  $P{idResp}  and o.data_operacao_realizada between  $P{ini}  and  $P{fim}   
+]]>
+	</queryString>
+	<field name="data_operacao_realizada" class="java.sql.Date"/>
+	<field name="valor_pedido" class="java.math.BigDecimal"/>
+	<field name="receber" class="java.math.BigDecimal"/>
+	<field name="apelido" class="java.lang.String"/>
+	<field name="parcelas" class="java.lang.Integer"/>
+	<field name="lucro_mes_funcionario" class="java.math.BigDecimal"/>
+	<field name="porfora" class="java.math.BigDecimal"/>
+	<field name="diario" class="java.math.BigDecimal"/>
+	<field name="total" class="java.math.BigDecimal"/>
+	<field name="id_funcionario_entregador" class="java.lang.Integer"/>
+	<field name="entregador" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="170" height="30" uuid="4d119b55-a1fc-4cce-853c-c0fc633aaef0"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18"/>
+				</textElement>
+				<text><![CDATA[Relatorio Responsavel:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="10" width="610" height="30" uuid="241bf0ff-6c4b-4e1e-aeb0-4fa17d6cb05a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomeResp}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="0" width="370" height="30" uuid="b8700669-248e-4e86-95e4-8d1ec30739d8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Apelido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="30" uuid="033f5241-fe71-4a44-8192-e3e2b85f392c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="70" height="30" uuid="f20e62df-4561-48fc-aea6-f5ab4d5eee04"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Parcelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="520" y="0" width="100" height="30" uuid="6cf79509-0d02-4e71-932d-d8503321cc45"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Valor Emprestado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="620" y="0" width="100" height="30" uuid="1a31e1ef-6202-4e63-aeea-393d1856ee41"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Comissão]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="720" y="0" width="100" height="30" uuid="6310a08c-97f7-4b50-a53a-21d75cc4d9aa"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Valor Passando]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="820" y="0" width="100" height="30" uuid="3b99d4f7-b30c-41ad-8dec-bcee54862d26"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Lucro Cobrador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="920" y="0" width="100" height="30" uuid="ac03ccdb-4a97-4d44-b62b-358a090185f1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Valor Entregador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1020" y="0" width="160" height="30" uuid="4f6ae100-e4da-4d29-998f-c6a58425a340"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="0" width="370" height="30" uuid="90be4c3c-593e-4311-aac1-6048041f6348"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apelido}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="0" width="80" height="30" uuid="8b2f4552-4030-4242-9627-bfcfb6abbbab"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_operacao_realizada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="70" height="30" uuid="10e70341-e326-4754-8533-d6e397275d0e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parcelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="0" width="100" height="30" uuid="5d288f42-260b-4ff8-8699-e98c6755f0e1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor_pedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="620" y="0" width="100" height="30" uuid="6b312d7f-92e3-4b87-9a7b-d95fa145bf27"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lucro_mes_funcionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="720" y="0" width="100" height="30" uuid="f097ff3f-7a03-482b-8ab4-f6b06a2a706a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{porfora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="820" y="0" width="100" height="30" uuid="f96d5abe-65e8-4492-a229-bf9bc5de1273"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{diario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="920" y="0" width="100" height="30" uuid="cc965fe3-82c7-44c4-95f7-a8c1720ad771">
+					<printWhenExpression><![CDATA[$F{id_funcionario_entregador} == $P{idResp}]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{entregador}.doubleValue()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1020" y="0" width="160" height="30" uuid="709c4e43-2162-4b87-888f-8b70730670a5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="0" width="1180" height="1" uuid="bb4805ec-a5b1-4225-b20e-af56dc4cd45c"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="1082" y="0" width="100" height="30" uuid="bd04ef40-22ad-4b36-8292-7fabbe516989"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<summary>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="0" width="370" height="30" uuid="2305cfca-5c36-4f05-9b3d-3db6685c279a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="70" height="30" uuid="394c0335-79d7-4294-8fc2-ca63f6452360"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parcelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="0" width="100" height="30" uuid="be733fcd-7370-4ea1-b63e-c2479f371b00"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valorEmprestado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="620" y="0" width="100" height="30" uuid="4560e6b3-71cc-4949-80a4-519fbf4d432c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{comissao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="720" y="0" width="100" height="30" uuid="a827b67c-69d6-40cd-9b32-20fb782e48a0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valorPassando}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="820" y="0" width="100" height="30" uuid="202217ed-b0a9-462c-b618-2ab69c78dcf7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valorCobrador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="920" y="0" width="100" height="30" uuid="2db7db91-43d8-453a-a44c-53caeb1f6d5c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalEntregador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1020" y="0" width="160" height="30" uuid="6249206d-7133-4e9a-bfd5-04321d826e51"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="-1" width="1180" height="1" uuid="2d73d707-631f-475d-bca1-c7adadbb6ddd"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

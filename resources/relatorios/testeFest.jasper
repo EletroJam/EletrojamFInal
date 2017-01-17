@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-06-21T21:30:29 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testeFest" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dfd50c8a-f55f-4f0e-8c18-d1039fc0a1af">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="eletro"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="dataIni" class="java.sql.Date"/>
+	<parameter name="dataFim" class="java.sql.Date"/>
+	<parameter name="caminho" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from status where data_inicial_pagamento BETWEEN   $P{dataIni}  and  $P{dataFim}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="numero_parcelas" class="java.lang.Integer"/>
+	<field name="valor_recebido" class="java.math.BigDecimal"/>
+	<field name="id_operacao" class="java.lang.Integer"/>
+	<field name="tipo_pagamento" class="java.lang.String"/>
+	<field name="tipo_pagamento_dia" class="java.lang.String"/>
+	<field name="data_inicial_pagamento" class="java.sql.Date"/>
+	<field name="multa" class="java.lang.Integer"/>
+	<field name="check_pag" class="java.lang.Boolean"/>
+	<field name="parcelas" class="java.lang.Integer"/>
+	<field name="multas" class="java.lang.Integer"/>
+	<field name="atraso" class="java.lang.Integer"/>
+	<field name="parcela_atual" class="java.lang.Integer"/>
+	<field name="nome_cliente_todos" class="java.lang.String"/>
+	<field name="parc_paga" class="java.lang.Integer"/>
+	<field name="atraso_parc" class="java.lang.Integer"/>
+	<field name="func" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="4b5faa06-ad86-4fe0-9c9b-1f3a561bb859"/>
+				<text><![CDATA[func]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="4" width="100" height="30" uuid="0be40353-fd68-4146-bcc1-5d393f09697b"/>
+				<text><![CDATA[valor_recebido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="2" width="100" height="30" uuid="3757a219-d1b1-4234-bdc5-97adea6ab373"/>
+				<text><![CDATA[numero_parcelas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="9a634a65-d6d2-4ebd-a19d-89f7b99d2045"/>
+				<textFieldExpression><![CDATA[$F{func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="30" uuid="6ceb24e6-df3b-4c47-9d87-c1a0524e2488"/>
+				<textFieldExpression><![CDATA[$F{valor_recebido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="30" uuid="df034f61-57c1-497c-b91a-f9790ad972b8"/>
+				<textFieldExpression><![CDATA[$F{numero_parcelas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="9" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="198" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="-10" width="550" height="200" uuid="c31a9613-4d16-43a8-b66e-481ae1ae7e97"/>
+				<subreportParameter name="dataIni">
+					<subreportParameterExpression><![CDATA[$P{dataIni}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{caminho}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2015-12-30T23:58:34 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="status.jasper" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2fb473bd-479a-4128-a42d-7186dba739db">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<parameter name="Parameter1" class="java.lang.String">
+		<parameterDescription><![CDATA[val]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[select numero_parcelas, valor_recebido from status
+
+]]>
+	</queryString>
+	<field name="numero_parcelas" class="java.lang.Integer"/>
+	<field name="valor_recebido" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="83" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="2bc83a4a-070e-4b58-bf8b-df2f999f9f39"/>
+				<textFieldExpression><![CDATA[$P{Parameter1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="75212195-d293-48b0-b400-a54680cc7492"/>
+				<text><![CDATA[numero_parcelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="0" width="100" height="30" uuid="f635f69b-bb98-42a3-9108-898d1ee8d092"/>
+				<text><![CDATA[valor_recebido]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-3" y="30" width="560" height="1" uuid="a8c3b225-f4c3-47e0-976a-4537bf072ae0"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="100" height="30" uuid="14330282-b588-4106-a4c3-75f546ee4d1c"/>
+				<textFieldExpression><![CDATA[$F{numero_parcelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="5" width="100" height="30" uuid="d760bebe-932d-4643-9b18-72361822f7cc"/>
+				<textFieldExpression><![CDATA[$F{valor_recebido}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="40" width="560" height="1" uuid="d0dea859-c8eb-4f3a-8ebd-eb874073a7c5"/>
+			</line>
+			<textField>
+				<reportElement x="330" y="5" width="20" height="30" uuid="78b13c65-1021-4617-8b65-c299a82cbbf1"/>
+				<textFieldExpression><![CDATA["R$:"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,41 @@
+.pane {
+-fx-background-color: #b0c4de;
+
+}
+
+
+.btnCadastrar {
+-fx-cursor: hand;
+}
+.btnCancelar {
+-fx-cursor: hand;
+}
+
+.btnCadastrar:hover {
+-fx-background-color: green;
+-fx-text-fill: white;
+}
+
+
+.btnCancelar:hover {
+-fx-background-color: red;
+-fx-text-fill: white;
+}
+
+.btnEntrar {
+-fx-cursor: hand;
+}
+
+.cWhite {
+-fx-background-color: #FFFFFF;
+}
+
+
+.btnEntrar:hover {
+-fx-background-color: green;
+-fx-text-fill: white;
+}
+
+body {
+    background-image: url("reuniao_corporativo_negocios.gif");
+}

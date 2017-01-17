@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="ancPanPainelCadastroCliente" fx:id="ancPanPainelCadastroCliente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="498.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaCadastroRota">
+   <children>
+      <Label alignment="TOP_CENTER" layoutX="148.0" layoutY="116.0" text="Rota:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfRota" fx:id="tfRota" alignment="TOP_CENTER" layoutX="192.0" layoutY="112.0" prefHeight="25.0" prefWidth="142.0" />
+      <Button id="btCadastrar" fx:id="btCadastrar" layoutX="216.0" layoutY="170.0" mnemonicParsing="false" onAction="#eventoBtnEntrar" styleClass="btnCadastrar" text="Cadastrar" />
+      <Label id="lRotaJaExistente" fx:id="lRotaJaExistente" layoutX="191.0" layoutY="182.0" text="Rota já existente" textFill="#ff0b0b" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="1551.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaLucroVendedor">
+   <children>
+      <TableView id="entregadorTable" fx:id="vendedorTable" layoutX="4.0" layoutY="102.0" prefHeight="383.0" prefWidth="1545.0">
+         <columns>
+            <TableColumn id="nomeColum" fx:id="nomeColum" prefWidth="293.0" text="Nome" />
+            <TableColumn fx:id="vendidoRecec" prefWidth="107.0" text="Valor a Receber" />
+            <TableColumn id="vendidoColum" fx:id="vendidoColum" minWidth="0.0" prefWidth="95.0" text="Valor Vendido" />
+            <TableColumn fx:id="comissaoColum" prefWidth="72.0" text="Comissão" />
+            <TableColumn fx:id="porforaColum" prefWidth="94.0" text="Valor Passando" />
+            <TableColumn id="diarioColum" fx:id="lucroColum" prefWidth="100.0" text="Lucro Vendedor" />
+            <TableColumn fx:id="lucroEntrega" prefWidth="121.0" text="Lucro Entregador" />
+            <TableColumn fx:id="cobraLucroColum" prefWidth="123.0" text="Lucro Cobrador" />
+            <TableColumn fx:id="diarioColum" prefWidth="147.0" text="Total Recebido Parcelas" />
+            <TableColumn fx:id="multaColum" minWidth="0.0" prefWidth="147.0" text="Total Recebido Multas" />
+            <TableColumn fx:id="totalPassColum" prefWidth="105.0" text="Total Passando" />
+            <TableColumn fx:id="totalColum" prefWidth="140.0" text="Total Recebido Geral" />
+         </columns>
+      </TableView>
+      <Button id="btnRelatorio" fx:id="btnRelatorio" layoutX="476.0" layoutY="47.0" mnemonicParsing="false" onAction="#eventoBtnRelatorio" prefHeight="25.0" prefWidth="67.0" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Relatorio">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="14.0" layoutY="19.0" prefHeight="27.0" prefWidth="99.0" text="Data Inicial:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button id="btnPesquisar" fx:id="btnPesquisar" layoutX="324.0" layoutY="47.0" mnemonicParsing="false" onAction="#eventoBtnPesquisar" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Pesquisar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <DatePicker id="dInicial" fx:id="dInicial" layoutX="113.0" layoutY="20.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="14.0" layoutY="59.0" text="Data Final:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker id="dFinal" fx:id="dFinal" layoutX="113.0" layoutY="60.0" prefHeight="25.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

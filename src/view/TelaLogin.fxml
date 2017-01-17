@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="ancPanPainelLogin" fx:id="ancPanPainelLogin" prefHeight="304.0" prefWidth="604.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaLogin">
+   <children>
+      <TextField id="tfLogin" fx:id="tfLogin" layoutX="240.0" layoutY="126.0" stylesheets="@../origemTela.css">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <PasswordField id="tfSenha" fx:id="tfSenha" layoutX="241.0" layoutY="175.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </PasswordField>
+      <Label layoutX="200.0" layoutY="128.0" text="Login:">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor>
+      </Label>
+      <Label layoutX="197.0" layoutY="178.0" text="Senha:">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor>
+      </Label>
+      <Label layoutX="292.0" layoutY="42.0" text="JK" textFill="#171717">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button id="btnEntrar" fx:id="btnEntrar" defaultButton="true" layoutX="289.0" layoutY="225.0" mnemonicParsing="false" onAction="#eventoBtnEntrar" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Entrar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label id="lNaoExistente" fx:id="lNaoExistente" layoutX="227.0" layoutY="265.0" text="Login ou senha não existente" textFill="#ff0101" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="lCampoBranco" fx:id="lCampoBranco" layoutX="230.0" layoutY="265.0" text="Existem campos em branco" textFill="#ee0606" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

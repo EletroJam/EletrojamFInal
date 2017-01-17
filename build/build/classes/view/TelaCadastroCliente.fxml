@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="ancPanPainelCadastroCliente" fx:id="ancPanPainelCadastroCliente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="1086.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaCadastroCliente">
+   <children>
+      <Label layoutX="44.0" layoutY="31.0" text="Nome:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="78.0" text="Apelido:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfNome" fx:id="tfNome" layoutX="97.0" layoutY="28.0" prefHeight="25.0" prefWidth="447.0" />
+      <TextField id="tfApelido" fx:id="tfApelido" layoutX="97.0" layoutY="73.0" prefHeight="25.0" prefWidth="447.0" />
+      <Label layoutX="47.0" layoutY="124.0" text="Email:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      
+      <Label layoutX="33.0" layoutY="238.0" text="Identidade:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="310.0" layoutY="238.0" text="CPF:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfEmail" fx:id="tfEmail" layoutX="97.0" layoutY="121.0" prefHeight="25.0" prefWidth="447.0" />
+      <TextField id="tfIdentidade" fx:id="tfIdentidade" layoutX="103.0" layoutY="233.0" prefHeight="25.0" prefWidth="187.0" />
+      <TextField id="tfCpf" fx:id="tfCpf" layoutX="341.0" layoutY="233.0" prefHeight="25.0" prefWidth="206.0" />
+      <DatePicker id="dataDataNascimento" fx:id="dataDataNascimento" layoutX="177.0" layoutY="348.0" />
+      <Label layoutX="43.0" layoutY="352.0" text="Data de nascimento:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="305.0" layoutY="287.0" text="Telefone:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="267.0" layoutY="336.0" text="Telefone Secundário:" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="285.0" text="Celular:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="279.0" layoutY="391.0" text="Celular Secundario:" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfTelefone" fx:id="tfTelefone" layoutX="365.0" layoutY="285.0" />
+      <TextField id="tfTelefone2" fx:id="tfTelefone2" layoutX="401.0" layoutY="334.0" prefHeight="25.0" prefWidth="161.0" visible="false" />
+      <TextField id="tfCelular" fx:id="tfCelular" layoutX="103.0" layoutY="283.0" />
+      <TextField id="tfCelular2" fx:id="tfCelular2" layoutX="402.0" layoutY="388.0" prefHeight="25.0" prefWidth="161.0" visible="false" />
+      <Label layoutX="600.0" layoutY="32.0" text="Estado:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="594.0" layoutY="83.0" text="Cidade:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="573.0" layoutY="128.0" text="Logadouro:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfEstado" fx:id="tfEstado" layoutX="649.0" layoutY="30.0" prefHeight="25.0" prefWidth="289.0" />
+      <TextField id="tfCidade" fx:id="tfCidade" layoutX="649.0" layoutY="83.0" prefHeight="25.0" prefWidth="289.0" />
+      <TextField id="tfLogadouro" fx:id="tfLogadouro" layoutX="647.0" layoutY="125.0" prefHeight="25.0" prefWidth="405.0" />
+      <Label layoutX="554.0" layoutY="172.0" text="Complemento:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfComplemento" fx:id="tfComplemento" layoutX="647.0" layoutY="169.0" prefHeight="25.0" prefWidth="405.0" />
+      <Label layoutX="618.0" layoutY="272.0" text="CEP:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="num" layoutX="840.0" layoutY="272.0" text="Número:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfCep" fx:id="tfCep" layoutX="651.0" layoutY="269.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField id="tfNumero" fx:id="tfNumero" layoutX="894.0" layoutY="269.0" />
+      <Button id="btCadastrar" fx:id="btCadastrar" layoutX="998.0" layoutY="370.0" mnemonicParsing="false" onAction="#eventoBtnCadastrarCliente" text="Cadastrar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label id="lEmailExistente" fx:id="lEmailExistente" layoutX="84.0" layoutY="154.0" text="Email já existente!" textFill="#fc0909" visible="false" />
+      <Label id="lIdentidadeJaExistente" fx:id="lIdentidadeJaExistente" layoutX="84.0" layoutY="209.0" text="Identidade já existente!" textFill="#f80808" visible="false" />
+      <Label id="lCpfJaExistente" fx:id="lCpfJaExistente" layoutX="322.0" layoutY="209.0" text="CPF já existente!" textFill="#f80808" visible="false" />
+      <Label layoutX="30.0" layoutY="33.0" text="*" />
+      <Label layoutX="30.0" layoutY="82.0" text="*" />
+      <Label id="lCamposObrigatorios" fx:id="lCamposObrigatorios" layoutX="684.0" layoutY="382.0" text="Campos com * são obrigatorios" textFill="#f50808" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label id="lCamposInvalidos" fx:id="lCamposInvalidos" layoutX="696.0" layoutY="381.0" text="Campos invalidos resetados" textFill="#f80202" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="lCpfInvalido" fx:id="lCpfInvalido" layoutX="338.0" layoutY="264.0" text="CPF inválido, inserir apenas números" textFill="#eb0909" visible="false" />
+      <Label id="lIdentidadeInvalida" fx:id="lIdentidadeInvalida" layoutX="93.0" layoutY="264.0" text="Identidade inválida, inserir apenas números" textFill="#fc0303" visible="false" />
+      <Label id="lEmailInvalido" fx:id="lEmailInvalido" layoutX="100.0" layoutY="146.0" text="Email inválido" textFill="#fc0707" visible="false" />
+      <Label id="lTelefoneInvalido" fx:id="lTelefoneInvalido" layoutX="365.0" layoutY="316.0" text="Telefone inválido" textFill="#f20303" visible="false" />
+      <Label id="lCelularInvalido" fx:id="lCelularInvalido" layoutX="101.0" layoutY="421.0" text="Celular inválido" textFill="#f20303" visible="false" />
+      <Label id="lCepInvalido" fx:id="lCepInvalido" layoutX="651.0" layoutY="246.0" text="Cep inválido" textFill="#fc0707" visible="false" />
+      <Label id="lNumeroInvalido" fx:id="lNumeroInvalido" layoutX="905.0" layoutY="246.0" text="Número inválido" textFill="#ee0606" visible="false" />
+      <Label id="lCelularJaExistente" fx:id="lCelularJaExistente" layoutX="102.0" layoutY="316.0" text="Celular já existente" textFill="#ee0202" visible="false" />
+      <Label id="lTelefoneJaExistente" fx:id="lTelefoneJaExistente" layoutX="101.0" layoutY="360.0" text="Telefone já existente" textFill="#ee0303" visible="false" />
+      <Label id="lTelefoneJaExistente2" fx:id="lTelefoneJaExistente2" layoutX="400.0" layoutY="360.0" text="Telefone secundario já existente" textFill="#f20909" visible="false" />
+      <Label id="lCelularJaExistente2" fx:id="lCelularJaExistente2" layoutX="402.0" layoutY="413.0" text="Celular sucendario Já existente " textFill="#eb0707" visible="false" />
+      <Label layoutX="40.0" layoutY="287.0" text="*" />
+      <Button layoutX="924.0" layoutY="370.0" mnemonicParsing="false" onAction="#eventoBtnLimpar" prefHeight="25.0" prefWidth="57.0" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Limpar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField id="tfBairro" fx:id="tfBairro" layoutX="651.0" layoutY="221.0" prefHeight="25.0" prefWidth="289.0" />
+      <Label layoutX="609.0" layoutY="225.0" text="Bairro:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox id="cVendedor" fx:id="cVendedor" layoutX="101.0" layoutY="182.0" prefHeight="25.0" prefWidth="254.0" styleClass="cWhite" stylesheets="@../origemTela.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Label layoutX="33.0" layoutY="185.0" text="Vendedor:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="187.0" text="*" />
+   </children>
+</AnchorPane>

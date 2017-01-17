@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import jfxtras.labs.scene.control.*?>
+
+<AnchorPane prefHeight="760.0" prefWidth="1302.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaClienteEd">
+  <!-- TODO Add Nodes -->
+  <children>
+    <SplitPane dividerPositions="0.6472" focusTraversable="true" layoutX="-14.0" prefHeight="600.0" prefWidth="1127.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="758.0" prefWidth="754.0">
+          <children>
+            <TableView fx:id="personTable" layoutX="-4.0" layoutY="14.0" prefHeight="743.0" prefWidth="702.0" tableMenuButtonVisible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="14.0">
+              <columns>
+                <TableColumn id="idColum" fx:id="idColum" maxWidth="5000.0" minWidth="10.0" prefWidth="49.0" text="ID" />
+                <TableColumn id="apelidoColum" fx:id="apelidoColum" maxWidth="5000.0" minWidth="10.0" prefWidth="302.0" text="APELIDO" />
+                        <TableColumn id="nomeColum" fx:id="nomeColum" prefWidth="264.0" text="NOME" />
+                        <TableColumn fx:id="responsavelColum" prefWidth="230.0" text="RESPONSAVEL" />
+              </columns>
+            </TableView>
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="758.0" prefWidth="588.0" styleClass="pane" stylesheets="@../origemTela.css">
+          <children>
+            <GridPane prefHeight="631.0" prefWidth="487.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="40.0">
+              <children>
+                <Label text="Nome:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                <Label text="Apelido:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                <Label text="Data  de Nascimento:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                <Label text="CPF:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                <Label text="Identidade:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                <Label fx:id="lNome" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label fx:id="lApelido" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label fx:id="lData" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="lCpf" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label fx:id="lIdentidade" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label fx:id="lEmail" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Cep:" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Estado:" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Bairro:" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Logadouro" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Complemento:" GridPane.rowIndex="11">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Cidade:" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lCep" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="lEstado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label fx:id="lBairro" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label fx:id="lCidade" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label fx:id="lLogadouro" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Label fx:id="lComplemento" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Label text="Telefone:" GridPane.rowIndex="12">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Celular:" GridPane.rowIndex="13">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label id="lTelefone" fx:id="lTelefone" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <Label id="lCelular" fx:id="lCelular" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <Label text="Responsavel:" GridPane.rowIndex="14">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lResponsavel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="144.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.0" minWidth="10.0" prefWidth="305.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="10.0">
+              <children>
+                <Button id="btnEdit" fx:id="btnEdit" mnemonicParsing="false" onAction="#btnEditAction" prefHeight="25.0" prefWidth="81.0" text="Edit." />
+                        <Button id="bAtt" fx:id="bAtt" mnemonicParsing="false" onAction="#AtualizarAction" prefHeight="25.0" prefWidth="79.0" text="Atualizar" />
+              </children>
+            </HBox>
+            <Label text="Detalhes Cliente" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="13.0" />
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+</AnchorPane>

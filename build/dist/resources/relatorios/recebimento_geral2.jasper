@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-06-19T21:30:12 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="recebimento_geral" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="64a2ba1f-d209-461f-a783-dee8060263b0">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="eletro"/>
+	<parameter name="dataIni" class="java.sql.Date"/>
+	<parameter name="dataFim" class="java.sql.Date"/>
+	<parameter name="funci" class="java.lang.String"/>
+	<parameter name="totalRec" class="java.lang.Double"/>
+	<parameter name="localizar" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT distinct s.func, sum (s.multas * o.valor_juros) as multa, sum (s.parcelas * o.valor_diario)  as parcelas , sum (s.multas * o.valor_juros + s.parcelas * o.valor_diario) as total FROM 
+status s, operacao o where s.id_operacao = o.id and s.data_inicial_pagamento BETWEEN $P{dataIni} AND $P{dataFim}  group by s.func order by s.func]]>
+	</queryString>
+	<field name="func" class="java.lang.String"/>
+	<field name="multa" class="java.math.BigDecimal"/>
+	<field name="parcelas" class="java.math.BigDecimal"/>
+	<field name="total" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="162" y="0" width="230" height="30" uuid="587fde85-5814-4e85-bf03-b7c9407b1616"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Recebimento Geral Cobrador]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="227" height="30" uuid="f677e2ce-7979-4c4b-bd0c-342737e01908"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Funcionario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="0" width="100" height="30" uuid="d21504af-1d33-43a6-9ebf-11e412f1cfaf"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Parcelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="100" height="30" uuid="809e0f38-a4f8-4998-828e-e0f1d95d6428"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Multa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="120" height="30" uuid="1f2bdcc4-77b7-488a-9368-b646588b9d00"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="227" height="30" uuid="74101a78-6796-49b8-b79a-a6001c5cb302"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="100" height="30" uuid="161dfcb5-c2c3-43eb-81a5-a85a7c7c83f6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{parcelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="120" height="30" uuid="d93d98f7-98c7-4f13-9614-24708d660129"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-1" y="-2" width="551" height="1" uuid="af6eb96d-b52e-49e4-91df-67f953fb1863"/>
+			</line>
+			<textField>
+				<reportElement x="330" y="0" width="100" height="30" uuid="c7bbe1a0-0c3f-4936-9155-ee908886972a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{multa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="500" y="10" width="50" height="30" uuid="7bf410cf-39cf-4b5e-9957-c7349a4001a3"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="47">
+			<staticText>
+				<reportElement x="400" y="0" width="50" height="30" uuid="fc96f2d6-2d8c-46df-beaf-4ee96c674352"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="71697a10-7495-427f-82ce-e3618fa024c2"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalRec}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

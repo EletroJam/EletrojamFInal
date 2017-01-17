@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-09-26T04:22:07 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="responsavelTeste" pageWidth="1224" pageHeight="792" columnWidth="1184" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a739fdc3-dd1a-4c9c-8b8d-8bcd18f3b5cc">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="lista" class="java.util.List"/>
+	<parameter name="idResp" class="java.lang.Integer"/>
+	<parameter name="totalEntregador" class="java.lang.String"/>
+	<parameter name="parcelas" class="java.lang.Integer"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="valorEmprestado" class="java.lang.String"/>
+	<parameter name="valorCobrador" class="java.lang.String"/>
+	<parameter name="valorPassando" class="java.lang.String"/>
+	<parameter name="nomeResp" class="java.lang.String"/>
+	<parameter name="fim" class="java.sql.Date"/>
+	<parameter name="ini" class="java.sql.Date"/>
+	<parameter name="comissao" class="java.lang.String"/>
+	<parameter name="nome" class="java.lang.String"/>
+	<parameter name="vlis" class="java.lang.String"/>
+	<parameter name="mult" class="java.lang.String"/>
+	<parameter name="multaParcela" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nomeentregador" class="java.lang.String"/>
+	<field name="data_operacao_realizada" class="java.sql.Date"/>
+	<field name="parcelas" class="java.lang.Integer"/>
+	<field name="valorEmprestado" class="java.lang.Double"/>
+	<field name="comissao" class="java.lang.Double"/>
+	<field name="valorPassando" class="java.lang.Double"/>
+	<field name="valorCobrador" class="java.lang.Double"/>
+	<field name="total" class="java.lang.Double"/>
+	<field name="id_entregador" class="java.lang.Integer"/>
+	<field name="valorEntregador" class="java.lang.Double"/>
+	<field name="valorLis" class="java.lang.Double"/>
+	<field name="numMulta" class="java.lang.Double"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="multaPassando" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50">
+			<textField>
+				<reportElement x="170" y="10" width="610" height="30" uuid="81c529a7-c402-414a-9d9a-bca12f1c5b6f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomeResp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="170" height="30" uuid="c9bd87e5-d171-4c56-8d85-c10282d96e23"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18"/>
+				</textElement>
+				<text><![CDATA[Relatorio Responsavel:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="30" uuid="ceaacf1b-e161-4ac9-9734-2fb329cac4e5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="320" height="30" uuid="3c8c7c44-7bff-425f-8f8f-d3beca843714"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Apelido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="80" height="30" uuid="9704044d-8c25-48ff-aa22-a4e4cc74cd40"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Parcelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="90" height="30" uuid="fa77f53b-abcf-429c-86a5-1834f47e34fa"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Valor Emprestado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="570" y="0" width="60" height="30" uuid="a98dd41a-d14b-477b-a6af-9f6d971d3f1b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Comissão]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="630" y="0" width="90" height="30" uuid="a44fd94f-a8f6-4832-aba9-bb406c0aa4fd"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Valor Passando]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="870" y="0" width="80" height="30" uuid="41ada64d-34b6-4cf7-a3b2-b2c1a47e9a23"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[V.LIS 20%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="720" y="0" width="70" height="30" uuid="be494353-178c-44a9-90e7-8dd38fd5dba9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Multas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="950" y="0" width="80" height="30" uuid="70009102-8990-47b6-aff6-e9d0d850bcdf"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[L.Cobrador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1030" y="0" width="70" height="30" uuid="185eb445-fc0d-4e2b-8de2-f11b5832266a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[V. Entregador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1100" y="0" width="80" height="30" uuid="88030b96-3c89-4b3c-8d62-f30152f2e613"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="790" y="0" width="80" height="30" uuid="e453f680-711b-496f-ac34-8294c2eb34f2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[M+Passando]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="1180" height="1" uuid="2aa820b0-316d-4709-bafe-2c5a0cdaf8a6"/>
+			</line>
+			<textField>
+				<reportElement x="1100" y="0" width="80" height="30" uuid="d20ab441-2885-4f72-84fb-a8df53f8536f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1030" y="0" width="70" height="30" uuid="a6f3f44e-560b-423e-95f7-bb6dbf8aa5b7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorEntregador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="950" y="0" width="80" height="30" uuid="3b0c092a-90fb-4acd-ae41-1d1c0b10731d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorCobrador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="720" y="0" width="70" height="30" uuid="d41e4829-2a7a-4c16-a1ce-5d431c02682e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numMulta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="0" width="80" height="30" uuid="05290d6b-2f09-40f4-8871-c8f1ef1dade4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorLis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="630" y="0" width="90" height="30" uuid="6ac63a8a-831d-45cb-81e6-0aad49f3e39f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorPassando}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="0" width="60" height="30" uuid="58fb5357-22c5-419b-90b1-afafb870adda"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comissao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="90" height="30" uuid="5b2c8ad0-3423-4275-bc3e-66acfc8ad3fa"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorEmprestado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="80" height="30" uuid="f51187d6-7e29-496d-9042-b37ef4c6020e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parcelas}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="0" width="80" height="30" uuid="f294801a-5c98-4f53-bbfe-ca0e87f54f2a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_operacao_realizada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="320" height="30" uuid="5c7cbf04-2db4-4a74-bb59-98c5f0ebeeca"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomeentregador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="790" y="0" width="80" height="30" uuid="bae14c8d-dae4-4c9f-b36e-c0ac08581c5d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{multaPassando}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="30">
+			<textField>
+				<reportElement x="1082" y="0" width="100" height="30" uuid="4814faff-2f99-4d03-9ddc-9c51f7b29ba1"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<summary>
+		<band height="30">
+			<line>
+				<reportElement x="2" y="-1" width="1180" height="1" uuid="83e9f186-70f0-4aba-8f5f-7ec510436dce"/>
+			</line>
+			<textField>
+				<reportElement x="1100" y="0" width="80" height="30" uuid="573fb18b-1c16-4586-8a96-fe6619cd5262"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1030" y="0" width="70" height="30" uuid="e32f8212-4ee5-46c5-af33-97b06be8f2f5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalEntregador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="950" y="0" width="80" height="30" uuid="8fa4d1f1-9c9d-4385-a8b6-18c0f31ea2c4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valorCobrador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="0" width="80" height="30" uuid="2afe8261-d60d-4c02-b0bf-76e490aeb0f0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{vlis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="630" y="0" width="90" height="30" uuid="65bbb04e-6be0-4714-aa7c-513b86e9e482"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valorPassando}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="0" width="60" height="30" uuid="23854c75-f0f2-4c01-b844-376a33a41937"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{comissao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="90" height="30" uuid="a911a049-da07-4e17-854c-d60ac90356fe"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valorEmprestado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="80" height="30" uuid="d7408846-2d64-47e9-910a-a148a4c0ca44"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parcelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="320" height="30" uuid="02fc382d-9725-4f17-8ce0-26b3a201ed0b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="720" y="0" width="70" height="30" uuid="9c9b84b3-1aaa-4b79-83c7-938cf9d286ca"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{mult}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="790" y="0" width="80" height="30" uuid="5bd53b26-8a15-4a5b-ae64-4445a812084e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{multaParcela}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

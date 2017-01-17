@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-07-10T20:04:25 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dabb06a8-f3a6-4418-9e9d-9d646af085da">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="eletro"/>
+	<parameter name="dataIni" class="java.sql.Date"/>
+	<parameter name="dataFim" class="java.sql.Date"/>
+	<parameter name="caminho" class="java.lang.String"/>
+	<parameter name="caminho2" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select distinct p.nome, sum(o.valor_pedido) as vendido,
+ o.id_funcionario_venda, ( sum(lucro_mes_funcionario) +  sum(parcelas * o.porfora)) as total from operacao o, pessoa p 
+where o.id_funcionario_venda = p.id and data_operacao_realizada BETWEEN   $P{dataIni} and  $P{dataFim} 
+group by p.nome, o.id_funcionario_venda order by p.nome]]>
+	</queryString>
+	<field name="nome" class="java.lang.String"/>
+	<field name="vendido" class="java.math.BigDecimal"/>
+	<field name="id_funcionario_venda" class="java.lang.Integer"/>
+	<field name="total" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="260" height="30" uuid="4b7f488a-0bc6-42e4-9b26-622ba5c3bd8d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Relatório de Responsáveis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="40" height="30" uuid="032eb8d6-97dc-4858-b1ce-6709542fe195"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="360" y="0" width="65" height="30" uuid="16f792ed-4c94-4d37-8ad0-7be81155fd31"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataIni}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="430" y="0" width="15" height="30" uuid="25451ddb-260b-412b-b593-b913cad97bed"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[a]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="445" y="0" width="100" height="30" uuid="29caad27-22db-4c94-a2a3-9bfe35a57904"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataFim}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="142" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="62" width="200" height="80" uuid="68faa7af-64fe-49d2-83ba-7cdee3377146"/>
+				<subreportParameter name="dataIni">
+					<subreportParameterExpression><![CDATA[$P{dataIni}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="dataFim">
+					<subreportParameterExpression><![CDATA[$P{dataFim}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{id_funcionario_venda}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="caminho2">
+					<subreportParameterExpression><![CDATA[$P{caminho2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{caminho}]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="0" y="0" width="170" height="28" uuid="0b14800d-b66d-4146-97b9-02c5b84f420d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="170" y="0" width="60" height="28" uuid="e6cdbe91-0816-488d-84d5-a9524e22530f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Vendido:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="230" y="0" width="170" height="28" uuid="f469a4df-a94a-43c2-99ed-47e20a70b155"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vendido}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="32" uuid="44dd89d7-9aac-4eb2-8a1e-fff5cf6f75ea"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Cobradores:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="445" y="0" width="105" height="28" uuid="cbc7fcbf-7550-48c1-94c0-c0455f57d591"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="400" y="0" width="45" height="28" uuid="2d52fb8b-4c85-42bc-ada3-6cea49df8984"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Lucro:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="480" y="26" width="70" height="30" uuid="9c56f251-a71a-489c-b167-65c9f438fac3"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

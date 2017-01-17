@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-07-31T00:22:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioEmpresitmoDiarioSolo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8618e353-52f9-49e8-b9bb-620137469038">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="eletro"/>
+	<parameter name="data" class="java.sql.Date"/>
+	<parameter name="responsavel" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="valorPedido" class="java.lang.String"/>
+	<parameter name="parcelas" class="java.lang.Integer"/>
+	<parameter name="valorParcela" class="java.lang.String"/>
+	<parameter name="valorMulta" class="java.lang.String"/>
+	<parameter name="valorPorFora" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select p.apelido, o.valor_pedido, o.parcelas, o.valor_diario, o.valor_juros, o.porfora from operacao o, realiza r, cliente p where o.id = r.id_operacao and r.id_cliente = p.id_cliente and o.data_operacao_realizada = $P{data}  order by p.apelido
+]]>
+	</queryString>
+	<field name="apelido" class="java.lang.String"/>
+	<field name="valor_pedido" class="java.math.BigDecimal"/>
+	<field name="parcelas" class="java.lang.Integer"/>
+	<field name="valor_diario" class="java.math.BigDecimal"/>
+	<field name="valor_juros" class="java.math.BigDecimal"/>
+	<field name="porfora" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="260" height="30" uuid="1bd25fee-3f36-44aa-934a-238b5ab870e1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Relatorio emprestimo diario por Responsavel:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="260" y="0" width="140" height="30" uuid="e0ab6a83-fa5c-410c-b6a1-b918e95f5910"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{responsavel}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="400" y="0" width="40" height="30" uuid="3e25e576-692d-4893-b14a-9602c59b9eaa"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="440" y="0" width="110" height="30" uuid="da85de78-ad74-4ad5-9cff-8af21fe25b40"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{data}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="500" y="0" width="50" height="30" uuid="15279003-b315-4ceb-baec-043c8321f114"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[V.P.Fora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="60" height="30" uuid="e9d7a0a3-ab03-42a0-91b9-c4234fd66048"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[V.Multa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="70" height="30" uuid="4b2a701c-8b87-4d98-a560-1ee38108cab7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[V.Parcela]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="50" height="30" uuid="4410ae80-ec2d-4350-a1aa-f5fe366187c4"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Parcelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="0" width="70" height="30" uuid="31f6be06-64d8-4059-a87f-545400bad3b7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[V.Emprestado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="250" height="30" uuid="598fc1d1-c6c5-4657-a4ea-134ef972fc6f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Apelido]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="250" height="30" uuid="0fddbf02-9677-4874-8e36-320ac879abe8"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apelido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="70" height="30" uuid="c4389651-f63b-4fff-9781-2038e0a3e889"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor_pedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="50" height="30" uuid="0c7304cf-2dde-4794-a812-0ae022aeca52"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parcelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="70" height="30" uuid="400dbe7e-8713-49fc-b3c6-9dba6defd99f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor_diario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="60" height="30" uuid="0ba5cc03-85ca-4c15-95cc-c68e1950a5b6"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor_juros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="0" width="50" height="30" uuid="8db2ea04-c412-400b-ab83-79ea8beb2727"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{porfora}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="-1" width="550" height="1" uuid="175831b6-2ec9-47cc-ba4e-bc3dc79c005a"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30">
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="a8dcc5e1-dbd8-460e-abd8-846f49a71650"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="250" height="30" uuid="93bb95c8-d3e5-4604-b021-7cddbb088787"/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="70" height="30" uuid="590da0f4-8688-4acc-9e55-e0c39bcb0fca"/>
+				<textFieldExpression><![CDATA[$P{valorPedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="70" height="30" uuid="a12877a4-d7c6-4d91-94ad-c064ea8096da"/>
+				<textFieldExpression><![CDATA[$P{valorParcela}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="60" height="30" uuid="ac2cba76-333e-4701-bcc6-5acf1c359136"/>
+				<textFieldExpression><![CDATA[$P{valorMulta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="50" height="30" uuid="d555cb09-7376-4567-8fd1-b1c6713ed9f4"/>
+				<textFieldExpression><![CDATA[$P{parcelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="0" width="50" height="30" uuid="91c7e885-33c6-4834-b8bf-252de2ba2424"/>
+				<textFieldExpression><![CDATA[$P{valorPorFora}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="550" height="1" uuid="97c17d58-ce79-4a64-a181-180075c4093f"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

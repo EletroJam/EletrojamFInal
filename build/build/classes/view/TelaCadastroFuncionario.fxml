@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="ancPanPainelCadastroFuncionario" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="1086.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaCadastroFuncionario">
+   <children>
+      <Label id="lCamposObrigatorios" fx:id="lCamposObrigatorios" layoutX="682.0" layoutY="365.0" text="Campos com * são obrigatorios" textFill="#f50808" visible="false" />
+      <Label layoutX="23.0" layoutY="45.0" text="*" />
+      <Label id="lCpfJaExistente" fx:id="lCpfJaExistente" layoutX="330.0" layoutY="171.0" text="CPF já existente!" textFill="#f80808" visible="false" />
+      <Label id="lIdentidadeJaExistente" fx:id="lIdentidadeJaExistente" layoutX="89.0" layoutY="171.0" text="Identidade já existente!" textFill="#f80808" visible="false" />
+      <Label id="lEmailExistente" fx:id="lEmailExistente" layoutX="97.0" layoutY="116.0" text="Email já existente!" textFill="#fc0909" visible="false" />
+      <Button id="btCadastrar" fx:id="btCadastrar" layoutX="1003.0" layoutY="480.0" mnemonicParsing="false" onAction="#eventoBtnCadastrarCFuncionario" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Cadastrar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField id="tfNumero" fx:id="tfNumero" layoutX="925.0" layoutY="269.0" />
+      <TextField id="tfCep" fx:id="tfCep" layoutX="669.0" layoutY="268.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label layoutX="869.0" layoutY="272.0" fx:id="num" text="Número:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="638.0" layoutY="271.0" text="CEP:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfComplemento" fx:id="tfComplemento" layoutX="665.0" layoutY="179.0" prefHeight="25.0" prefWidth="405.0" />
+      <Label layoutX="567.0" layoutY="184.0" text="Complemento:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfLogadouro" fx:id="tfLogadouro" layoutX="665.0" layoutY="135.0" prefHeight="25.0" prefWidth="405.0" />
+      <TextField id="tfCidade" fx:id="tfCidade" layoutX="667.0" layoutY="91.0" prefHeight="25.0" prefWidth="289.0" />
+      <TextField id="tfEstado" fx:id="tfEstado" layoutX="667.0" layoutY="40.0" prefHeight="25.0" prefWidth="289.0" />
+      <Label layoutX="591.0" layoutY="138.0" text="Logadouro:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="612.0" layoutY="93.0" text="Cidade:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="618.0" layoutY="42.0" text="Estado:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfCelular2" fx:id="tfCelular2" layoutX="379.0" layoutY="290.0" prefHeight="25.0" prefWidth="161.0" />
+      <TextField id="tfCelular" fx:id="tfCelular" layoutX="80.0" layoutY="290.0" />
+      <TextField id="tfTelefone2" fx:id="tfTelefone2" layoutX="379.0" layoutY="246.0" prefHeight="25.0" prefWidth="161.0" />
+      <TextField id="tfTelefone" fx:id="tfTelefone" layoutX="80.0" layoutY="246.0" />
+      <Label layoutX="254.0" layoutY="293.0" text="Celular Secundario:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="292.0" text="Celular:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="245.0" layoutY="248.0" text="Telefone Secundário:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="248.0" text="Telefone:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="200.0" text="Data de nascimento:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <DatePicker id="dDataNascimento" fx:id="dDataNascimento" layoutX="151.0" layoutY="196.0" />
+      <TextField id="tfCpf" fx:id="tfCpf" layoutX="325.0" layoutY="141.0" prefHeight="25.0" prefWidth="206.0" />
+      <TextField id="tfIdentidade" fx:id="tfIdentidade" layoutX="87.0" layoutY="141.0" prefHeight="25.0" prefWidth="187.0" />
+      <TextField id="tfEmail" fx:id="tfEmail" layoutX="91.0" layoutY="89.0" prefHeight="25.0" prefWidth="447.0" />
+      <Label layoutX="294.0" layoutY="146.0" text="CPF:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="146.0" text="Identidade:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="91.0" text="Email:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfNome" fx:id="tfNome" layoutX="91.0" layoutY="40.0" prefHeight="25.0" prefWidth="447.0" />
+      <Label layoutX="38.0" layoutY="43.0" text="Nome:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+     
+      <Label layoutX="26.0" layoutY="364.0" text="Cargos:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <CheckBox id="cVendedor" fx:id="cVendedor" layoutX="84.0" layoutY="394.0" mnemonicParsing="false" text="Responsável">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox id="cCobrador" fx:id="cCobrador" layoutX="84.0" layoutY="427.0" mnemonicParsing="false" text="Cobrador">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <Label id="tLogin" fx:id="tLogin" layoutX="224.0" layoutY="366.0" text="Login:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="tSenha" fx:id="tSenha" layoutX="223.0" layoutY="404.0" text="Senha:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+       <Label id="lCamposInvalidos" fx:id="lCamposInvalidos" layoutX="742.0" layoutY="483.0" text="Campos invalidos resetados" textFill="#f80202" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfLogin" fx:id="tfLogin" layoutX="274.0" layoutY="365.0" prefHeight="25.0" prefWidth="180.0" />
+      <Label layoutX="14.0" layoutY="366.0" text="*" />
+      <Label id="lCpfInvalido" fx:id="lCpfInvalido" layoutX="331.0" layoutY="173.0" text="CPF inválido, inserir apenas números" textFill="#fc0000" visible="false" />
+      <Label id="lEmailInvalido" fx:id="lEmailInvalido" layoutX="95.0" layoutY="116.0" text="Email inválido" textFill="#ee0303" visible="false" />
+      <Label id="lIdentidadeInvalida" fx:id="lIdentidadeInvalida" layoutX="89.0" layoutY="173.0" text="Identidade inválida, inserir apenas números " textFill="#f20404" visible="false" />
+      <Label id="lTelefoneInvalido" fx:id="lTelefoneInvalido" layoutX="90.0" layoutY="271.0" text="Telefone inválido" textFill="#f20202" visible="false" />
+      <Label id="lLoginExistente" fx:id="lLoginExistente" layoutX="460.0" layoutY="374.0" text="Login já existente" textFill="#f50202" visible="false" />
+      <Label id="lCepInvalido" fx:id="lCepInvalido" layoutX="667.0" layoutY="260.0" text="Cep inválido" textFill="#ff0909" visible="false" />
+      <Label id="lNumeroInvalido" fx:id="lNumeroInvalido" layoutX="923.0" layoutY="260.0" text="Número inválido" textFill="#ee0707" visible="false" />
+      <Label id="lCelularInvalido" fx:id="lCelularInvalido" layoutX="84.0" layoutY="317.0" text="Celular inválido " textFill="#fc0202" visible="false" />
+      <Label id="lTelefoneJaExistente" fx:id="lTelefoneJaExistente" layoutX="81.0" layoutY="272.0" text="Telefone já existente" textFill="#f50909" visible="false" />
+      <Label id="lCelularJaExistente" fx:id="lCelularJaExistente" layoutX="82.0" layoutY="317.0" text="Celular já existente" textFill="#f20101" visible="false" />
+      <Label id="lTelefoneJaExistente2" fx:id="lTelefoneJaExistente2" layoutX="384.0" layoutY="272.0" text="Telefone secundario já existente" textFill="#ff0808" visible="false" />
+      <Label id="lCelularJaExistente2" fx:id="lCelularJaExistente2" layoutX="377.0" layoutY="317.0" text="Celular sucendario Já existente " textFill="#f50606" visible="false" />
+      <CheckBox id="cOperador" fx:id="cOperador" layoutX="84.0" layoutY="364.0" mnemonicParsing="false" text="Operador">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <PasswordField id="tfSenha" fx:id="tfSenha" layoutX="274.0" layoutY="402.0" prefHeight="25.0" prefWidth="180.0" />
+      <Label id="lOperadorLogin" fx:id="lOperadorLogin" layoutX="460.0" layoutY="369.0" text="Login é obrigatorio para operador" textFill="#eb0c0c" visible="false" />
+      <Label id="lOperadorSenha" fx:id="lOperadorSenha" layoutX="455.0" layoutY="406.0" text="Senha e obrigatoria para operador" textFill="#ee0909" visible="false" />
+      <Button id="btLimpar" fx:id="btLimpar" layoutX="925.0" layoutY="480.0" mnemonicParsing="false" onAction="#eventoBtnLimpa" prefHeight="25.0" prefWidth="67.0" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Limpar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <CheckBox id="cEntregador" fx:id="cEntregador" layoutX="84.0" layoutY="460.0" mnemonicParsing="false" text="Entregador">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="621.0" layoutY="229.0" text="Bairro:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfBairro" fx:id="tfBairro" layoutX="669.0" layoutY="226.0" prefHeight="25.0" prefWidth="289.0" />
+      <Label layoutX="221.0" layoutY="450.0" text="Confirmar Senha:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <PasswordField id="tfConfirmar" fx:id="tfConfirmar" layoutX="331.0" layoutY="448.0" prefHeight="25.0" prefWidth="166.0" />
+      <Label id="lSenhaInv" fx:id="lSenhaInv" layoutX="511.0" layoutY="452.0" text="Senhas Diferentes" textFill="#e80606" visible="false" />
+   </children>
+</AnchorPane>

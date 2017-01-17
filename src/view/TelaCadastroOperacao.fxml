@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="ancPanPainelCadastroOperacao" prefHeight="546.0" prefWidth="1032.0" styleClass="pane" stylesheets="@../origemTela.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleView.ControleTelaCadastroOperacao">
+   <children>
+      <Label layoutX="39.0" layoutY="146.0" text="Valor pedido R$:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="264.0" prefHeight="20.0" prefWidth="153.0" text="Porcentagem do valor :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="314.0" text="Percas futuras:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfValorPedido" fx:id="tfValorPedido" layoutX="149.0" layoutY="144.0" prefHeight="25.0" prefWidth="141.0" promptText="Número" />
+      <TextField id="tfPorcentagemValorPedido" fx:id="tfPorcentagemValorPedido" layoutX="192.0" layoutY="264.0" prefHeight="25.0" prefWidth="110.0" promptText="Número" />
+      <TextField id="tfValorExtraCobrador" fx:id="tfValorExtraCobrador" layoutX="192.0" layoutY="314.0" prefHeight="25.0" prefWidth="110.0" promptText="Número" />
+      <ComboBox id="cTipoDePagamento" fx:id="cTipoDePagamento" layoutX="507.0" layoutY="36.0" prefHeight="25.0" prefWidth="153.0" promptText="Dia da semana" styleClass="cWhite" stylesheets="@../origemTela.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <ComboBox id="cParcelaMulta" fx:id="cParcelaMulta" layoutX="507.0" layoutY="90.0" prefHeight="25.0" prefWidth="70.0" styleClass="cWhite" stylesheets="@../origemTela.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <ComboBox id="cValorCobradorDiario" fx:id="cValorCobradorDiario" layoutX="507.0" layoutY="140.0" prefHeight="25.0" prefWidth="70.0" styleClass="cWhite" stylesheets="@../origemTela.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <ComboBox id="cCobrador" fx:id="cCobrador" layoutX="383.0" layoutY="359.0" prefHeight="25.0" prefWidth="254.0" promptText="Cobrador" styleClass="cWhite" stylesheets="@../origemTela.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <ComboBox id="cVendedor" fx:id="cVendedor" layoutX="379.0" layoutY="351.0" prefHeight="25.0" prefWidth="254.0" promptText="Vendedor" styleClass="cWhite" stylesheets="@../origemTela.css" visible="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Label id="lLucro" fx:id="lLucro" layoutX="795.0" layoutY="38.0" text="Total:" textFill="#111010" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="lLucroMesFuncionario" fx:id="lLucroMesFuncionario" layoutX="695.0" layoutY="208.0" text="Lucro mês responsável:" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="374.0" text="Porcentagem lucro Responsável:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfPorcentagemLucroFuncionario" fx:id="tfPorcentagemLucroFuncionario" layoutX="235.0" layoutY="372.0" prefHeight="25.0" prefWidth="70.0" promptText="Número" text="4" />
+      <Label id="lValorDiario" fx:id="lValorDiario" layoutX="757.0" layoutY="207.0" text="Valor díario:" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="lValorJuros" fx:id="lValorJuros" layoutX="759.0" layoutY="265.0" text="Multa:" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfLucro" fx:id="tfLucro" editable="false" layoutX="846.0" layoutY="35.0" prefHeight="25.0" prefWidth="130.0" visible="false" />
+      <TextField id="tfLucroMesFuncionario" fx:id="tfLucroMesFuncionario" editable="false" layoutX="846.0" layoutY="206.0" prefHeight="25.0" prefWidth="130.0" visible="false" />
+      <TextField id="tfValorDiario" fx:id="tfValorDiario" editable="false" layoutX="846.0" layoutY="204.0" prefHeight="25.0" prefWidth="130.0" visible="false" />
+      <TextField id="tfValorJuros" fx:id="tfValorJuros" layoutX="846.0" layoutY="262.0" prefHeight="25.0" prefWidth="130.0" visible="false" />
+      <Button id="btCadastrar" fx:id="btCadastrar" layoutX="918.0" layoutY="473.0" mnemonicParsing="false" onAction="#eventoBtnCadastrar" prefHeight="25.0" prefWidth="83.0" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Cadastrar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button id="btLimpar" fx:id="btLimpar" layoutX="809.0" layoutY="473.0" mnemonicParsing="false" onAction="#eventoBtnLimpar" prefHeight="25.0" prefWidth="99.0" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Limpar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button id="btChecar" fx:id="btChecar" layoutX="692.0" layoutY="473.0" mnemonicParsing="false" onAction="#eventoBtnChecaValores" prefHeight="25.0" prefWidth="110.0" styleClass="btnCadastrar" stylesheets="@../origemTela.css" text="Checa Valores">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="24.0" layoutY="147.0" text="*">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="208.0" text="*">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="667.0" layoutY="39.0" text="*">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="590.0" layoutY="93.0" prefHeight="20.0" prefWidth="0.0" text="*">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="264.0" text="*">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="366.0" layoutY="359.0" text="*">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="362.0" layoutY="351.0" text="*" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="206.0" text="Parecelas:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfParcelas" fx:id="tfParcelas" layoutX="130.0" layoutY="204.0" prefHeight="25.0" prefWidth="141.0" promptText="Número" />
+      <Label id="lObrigatorio" fx:id="lObrigatorio" layoutX="382.0" layoutY="512.0" text="Campos com * devem ser preenchidos" textFill="#eb0808" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="lValorPedidp" fx:id="lValorPedidp" layoutX="26.0" layoutY="127.0" text="Valor deve ser apenas números, e casa decimais com . ex: 256.20" textFill="#e40606" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="lPorcentagemPedido" fx:id="lPorcentagemPedido" layoutX="192.0" layoutY="291.0" text="Sem &quot;%&quot;" textFill="#fc0d0d" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="lPorcentagemFuncionario" fx:id="lPorcentagemFuncionario" layoutX="192.0" layoutY="339.0" text="Sem &quot;%&quot;" textFill="#fc0d0d" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox id="cCliente" fx:id="cCliente" layoutX="381.0" layoutY="301.0" prefHeight="25.0" prefWidth="254.0" promptText="Cliente" styleClass="cWhite" stylesheets="@../origemTela.css" visibleRowCount="20">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <DatePicker id="dCobranca" fx:id="dCobranca" editable="false" layoutX="37.0" layoutY="91.0" prefHeight="25.0" prefWidth="191.0" promptText="Inicio da cobrança" styleClass="cWhite" stylesheets="@../origemTela.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></DatePicker>
+      <Label layoutX="365.0" layoutY="304.0" text="*">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="305.0" layoutY="268.0" text="\%" />
+      <Label layoutX="310.0" layoutY="376.0" text="\%" />
+      <DatePicker id="dDataOperacao" fx:id="dDataOperacao" layoutX="38.0" layoutY="36.0" prefHeight="25.0" prefWidth="191.0" promptText="Data operação realizada " />
+      <ComboBox id="cEntregador" fx:id="cEntregador" layoutX="383.0" layoutY="410.0" prefHeight="25.0" prefWidth="254.0" promptText="Entregador" styleClass="cWhite" stylesheets="@../origemTela.css" />
+      <Label layoutX="35.0" layoutY="426.0" text="Porcentagem Entregador:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfPorcentagemEntregador" fx:id="tfPorcentagemEntregador" layoutX="197.0" layoutY="422.0" prefHeight="25.0" prefWidth="47.0" />
+      <Label layoutX="247.0" layoutY="428.0" text="\%" />
+      <ComboBox id="cValorCobradorMulta" fx:id="cValorCobradorMulta" layoutX="507.0" layoutY="204.0" prefHeight="25.0" prefWidth="70.0" styleClass="cWhite" stylesheets="@../origemTela.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Label layoutX="363.0" layoutY="38.0" text="Tipo de pagamento:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="363.0" layoutY="97.0" text="Parcela da multa:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="366.0" layoutY="148.0" text="Valor cobrador diário:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="366.0" layoutY="206.0" text="Valor cobrador multa:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox id="cRota" fx:id="cRota" layoutX="379.0" layoutY="444.0" prefHeight="25.0" prefWidth="254.0" promptText="Rotas" styleClass="cWhite" stylesheets="@../origemTela.css" visible="false" />
+      <Label id="lPorfora" fx:id="lPorfora" layoutX="366.0" layoutY="254.0" text="Valor passando:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfPorfora" fx:id="tfPorfora" layoutX="507.0" layoutY="252.0" prefHeight="25.0" prefWidth="125.0" promptText="Número" />
+      <Label layoutX="692.0" layoutY="39.0" text="Tipo de pagamento (especifico)">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField id="tfPagamentoEs" fx:id="tfPagamentoEs" layoutX="897.0" layoutY="37.0" prefHeight="25.0" prefWidth="90.0" promptText="Número" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-06-20T02:42:35 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="historicoOperacoes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2aa8ad2e-0596-4c29-b061-aca0bbb6410a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="eletro"/>
+	<subDataset name="Dataset1" uuid="e425e20e-afc7-4dde-b9fc-e440fcb5f73e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="clienteNome" class="java.lang.String"/>
+	<parameter name="idClientee" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select * from operacoes_cliente where id_cliente =   $P{idClientee}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="data" class="java.sql.Date"/>
+	<field name="valor_emprestimo" class="java.math.BigDecimal"/>
+	<field name="quantidade_atraso" class="java.lang.Integer"/>
+	<field name="id_cliente" class="java.lang.Integer"/>
+	<field name="id_operacao" class="java.lang.Integer"/>
+	<field name="estado" class="java.lang.String"/>
+	<background>
+		<band height="5" splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="110" height="30" uuid="ba96fc0e-9974-4d85-8ecb-21e823ebdc73"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Historico De]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="0" width="425" height="30" uuid="794a0cb6-b220-4760-ad92-3154d96554e6"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{clienteNome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="30" uuid="416d81d0-7054-4e58-8f0f-fc167c1deb91"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="130" height="30" uuid="79806900-9e71-408b-9f08-25f5fc3c2df0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Valor Emprestado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="110" height="30" uuid="573f1a66-ba70-4e14-b735-5c51414342db"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="138" height="30" uuid="1ee84273-a0e2-4a46-bb57-028439f35bbc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Quantidade de Atrasos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="0" width="100" height="30" uuid="4faf1f91-4219-476a-85a0-bbafaa1c5399"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="5" width="80" height="30" uuid="002d2656-8e22-4b41-a4d0-ee8681c39343"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="5" width="130" height="30" uuid="096238dd-0f61-44af-b08e-7ccf323b6bf3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor_emprestimo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="80" y="5" width="110" height="30" uuid="616ef103-6428-4321-87c2-e417b8085b8f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="5" width="138" height="30" uuid="0e591640-e9ef-46e4-a853-7122b5936a09"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantidade_atraso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="5" width="100" height="30" uuid="be079f31-c4c0-4226-9f1b-eeb961e2bcc4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-2" y="0" width="558" height="1" uuid="8e020378-73f0-48ce-958c-c26c6629ce17"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="51" splitType="Stretch">
+			<textField>
+				<reportElement x="458" y="0" width="100" height="30" uuid="350f3e30-9ccc-42a5-acc6-8514289fc41c"/>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
